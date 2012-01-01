@@ -18,7 +18,7 @@ Array::Extract - extract element from an array
   use Array::Extract qw(extract);
 
   # remove those members from @members who are
-  # blackballed and store them in @banner
+  # blackballed and store them in @banned
   my @banned = extract { $_->blackballed } @members;
 
 =head1 DESCRIPTION
@@ -52,7 +52,7 @@ sub extract(&\@) {
   my $block = shift;
   my $array = shift;
 
-  # loop invarients.  The element we're currently on
+  # loop invariants.  The element we're currently on
   # and the length of the array
   my $i = 0;
   my $length = @{ $array };
@@ -78,7 +78,7 @@ sub extract(&\@) {
         undef $remove_from;
       }
     } else {
-      # remmebr we're going to remove this content
+      # remember we're going to remove this content
       $remove_from = $i
         unless defined $remove_from;
 
@@ -109,7 +109,7 @@ and/or modify it under the same terms as Perl itself.
 
 =head1 BUGS
 
-This module (deliberatly) does not alias C<> to the
+This module (deliberately) does not alias C<$_> to the
 actual array element within the block
 
 Bugs should be reported via this distribution's
@@ -118,11 +118,11 @@ L<https://rt.cpan.org/Dist/Display.html?Array-Extract>
 
 You can also address issues by forking this distribution
 on github and sending pull requests.  It can be found at
-L<http://github.com/2shortplanks/>
+L<http://github.com/2shortplanks/Array-Extract>
 
 =head1 SEE ALSO
 
-L<List::Util>, L<List::MoreUtil>, L<Tie::File>
+L<List::Util>, L<List::MoreUtils>, L<Tie::File>
 
 =cut
 
